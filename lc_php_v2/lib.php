@@ -1,8 +1,91 @@
 <?php
 
+function connection_check_php()
+{
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "library_clients";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    echo "<p class='connected'  id='connection_status_bar_php'>PHP connected</p>";
+}
+
+function connection_check_login()
+{
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "lib_client_auth";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    echo "<p class='connected' id='connection_status_bar_login'>Login connected</p>";
+}
+
+function login()
+{
+    if (isset($_POST['login'])) {
+        $user_login = $_POST['user_login'];
+        $user_pass = $_POST['user_pass'];
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "lib_client_auth";
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        if (isset($_POST['login'])) {
+            global $user_name;
+            global $user_password;
+            $user_name = $_POST['user_name'];
+            $user_password = $_POST['user_password'];
+
+            $sql = "SELECT * FROM auth ";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    if ($row['user_name'] === $user_login and $row['user_password'] === $user_pass) {
+
+                        echo "<script>" . "document.getElementById(\"login_area\").innerHTML = \" \";" . "</script>";
+                        echo("<h1>Добро пожаловать.</h1>");
+
+                        echo "<script>" . "someTimeout = 1500;" .
+                            "window.setTimeout(\"document.location = \'http://lc2/index.php\';\", someTimeout);" .
+                            "</script>";
+                    } else {
+                        echo "<br><h1>Ошибка, вы ввели неверные данные.</h1>";
+
+                    }
+                }
+            }
+        }
+    }
+
+}
+
 function books_list()
 {
-    echo "<tr>" . "<td>" . "ID" . "</td>" .
+    echo
+        "<tr>" . "<td>" . "ID" . "</td>" .
         "<td>" . "Название" . "</td>" .
         "<td>" . "Жанр" . "</td>" .
         "<td>" . "Издатель" . "</td>" .
@@ -77,7 +160,7 @@ function clients_list()
     $conn->close();
 }
 
-function publishers()
+function publishers_list()
 {
     echo "<tr>" . "<td>" . "Название" . "</td>" .
         "<td>" . "Сайт" . "</td>" .
@@ -112,42 +195,6 @@ function publishers()
         echo "0 results";
     }
     $conn->close();
-}
-
-function bdCheck()
-{
-
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "library_clients";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    echo "<p id='connection_status_php'>PHP connected.</p>";
-
-}
-
-function authServerCheck()
-{
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "lib_client_auth";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    echo "<p id='connection_status_login'>Login connected.</p>";
 }
 
 function orders_list()
