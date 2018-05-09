@@ -1,0 +1,271 @@
+body {
+    margin: auto;
+    height: 750px;
+    width: 1200px;
+    border: solid black 8px;
+    background: azure;
+}
+
+#connection_status {
+    width: 190px;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    position: fixed;
+    text-align: center;
+}
+
+#connection_status_bar_php {
+    border: solid black 2px;
+    height: 20px;
+    width: 190px;
+    margin-top: 50px;
+}
+
+#connection_status_bar_login {
+    border: solid black 2px;
+    height: 20px;
+    width: 190px;
+    margin-top: -10px;
+}
+
+.connected {
+    background: yellowgreen;
+}
+
+#logo {
+    position: fixed;
+    margin-left: -460px;
+}
+
+header {
+    position: fixed;
+    border: solid black 2px;
+    height: 100px;
+    width: 980px;
+    margin-top: 10px;
+    margin-left: 210px;
+    text-align: center;
+    align-content: center;
+    background: beige;
+    font-family: "Book Antiqua";
+}
+
+#menu {
+    position: fixed;
+    width: 190px;
+    height: 620px;
+    margin-top: 120px;
+    margin-left: 10px;
+    border: solid black 2px;
+    background: beige;
+    font-family: "Book Antiqua";
+}
+
+#content {
+    overflow: auto;
+    position: fixed;
+    height: 620px;
+    width: 980px;
+    margin-top: 120px;
+    margin-left: 210px;
+    border: solid black 2px;
+}
+
+.menu_button {
+    width: 170px;
+    height: 35px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.menu_title {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 30px;
+}
+
+#content_login {
+    overflow: auto;
+    position: fixed;
+    height: 620px;
+    width: 1180px;
+    margin-top: 120px;
+    margin-left: 10px;
+    border: solid black 2px;
+    background: azure;
+}
+
+#login_area {
+    width: 400px;
+    height: 200px;
+    margin-top: 100px;
+    margin-left: 400px;
+    text-align: center;
+}
+
+.login_field {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.login_button {
+    margin-top: 35px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.table_out {
+    width: 920px;
+    margin-left: 30px;
+    margin-top: 30px;
+    font-size: 16px;
+    font-family: "Times New Roman";
+
+}
+
+.inner_list_book_info {
+    text-align: center;
+    width: 235px;
+    float: left;
+}
+
+.inner_list_client_id {
+    text-align: center;
+    width: 75px;
+    float: left;
+}
+
+.inner_list_client_name {
+    text-align: center;
+    width: 210px;
+    float: left;
+}
+
+.inner_list_order_id {
+    text-align: center;
+    width: 75px;
+    float: left;
+}
+
+.inner_list_order_date {
+    text-align: center;
+    width: 125px;
+    float: left;
+}
+
+.inner_list_client_phone {
+    text-align: center;
+    width: 200px;
+    float: left;
+}
+
+.inner_prgh_book_info {
+    align-content: center;
+    text-align: center;
+    width: 230px;
+    height: 40px;
+    margin-top: -20px;
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+.inner_prgh_client_id {
+    align-content: center;
+    text-align: center;
+    width: 70px;
+    height: 40px;
+    margin-top: -10px;
+    margin-left: 30px;
+    font-size: 20px;
+
+}
+
+.inner_prgh_client_name {
+    align-content: center;
+    text-align: center;
+    width: 205px;
+    height: 40px;
+    margin-top: -10px;
+    margin-left: 30px;
+    font-size: 20px;
+
+}
+
+.inner_prgh_order_id {
+    align-content: center;
+    text-align: center;
+    width: 70px;
+    height: 40px;
+    margin-top: -10px;
+    margin-left: 30px;
+    font-size: 20px;
+
+}
+
+.inner_prgh_order_date {
+    align-content: center;
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    margin-top: -10px;
+    margin-left: 30px;
+    font-size: 20px;
+
+}
+
+.inner_prgh_client_phone {
+    align-content: center;
+    text-align: center;
+    width: 195px;
+    height: 40px;
+    margin-top: -10px;
+    margin-left: 30px;
+    font-size: 20px;
+
+}
+
+.inner_prgh {
+    align-content: center;
+    text-align: center;
+    border: solid black 2px;
+    width: 370px;
+    height: 40px;
+    margin-top: -10px;
+}
+
+.inner_prgh_id {
+    align-content: center;
+    text-align: center;
+    border: solid black 2px;
+    width: 80px;
+    height: 40px;
+    margin-top: -10px;
+}
+
+td {
+    text-align: center;
+    border: solid black 1px;
+}
+
+.add_field {
+    margin-top: 10px;
+    margin-left: 275px;
+    text-align: center;
+    width: 400px;
+    font-size: 18px;
+}
+
+.add_button {
+    margin-left: 275px;
+    text-align: center;
+    width: 400px;
+    font-size: 18px;
+
+}
+
+.id_value {
+    width: 100px;
+}

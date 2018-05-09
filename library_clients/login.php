@@ -8,14 +8,15 @@
 <body>
 <div id="connection_status">
     <?
-    connection_check_php();
-    connection_check_login()
+    connection_check_php('localhost', 'root', '', 'library_clients');
+    connection_check_login('localhost', 'root', '', 'lib_client_auth');
     ?>
 </div>
 <header>
     <img src="img/library_Logo.png" id="logo">
     <h1>ИПС "КЛИЕНТЫ БИБЛИОТЕКИ"</h1>
 </header>
+
 <div id="content_login">
     <div id="login_area">
         <form method="post">
@@ -24,7 +25,7 @@
             <input class="login_button" type="submit" name="login" value="Войти">
         </form>
         <?php
-        login();
+        login('localhost', 'root', '', 'lib_client_auth', 'SELECT * FROM auth');
         ?>
     </div>
 </div>

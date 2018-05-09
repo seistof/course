@@ -8,8 +8,8 @@
 <body>
 <div id="connection_status">
     <?
-    connection_check_php();
-    connection_check_login()
+    connection_check_php('localhost', 'root', '', 'library_clients');
+    connection_check_login('localhost', 'root', '', 'lib_client_auth');
     ?>
 </div>
 
@@ -17,11 +17,12 @@
     <img src="img/library_Logo.png" id="logo">
     <h1>ИПС "КЛИЕНТЫ БИБЛИОТЕКИ"</h1>
 </header>
-<div id="main_window">
+
 <?php
-login();
+stats_menu();
+stats_genres('localhost', 'root', '', 'library_clients')
 ?>
-</div>
+
 </body>
 <script src="script.js"></script>
 </html>
